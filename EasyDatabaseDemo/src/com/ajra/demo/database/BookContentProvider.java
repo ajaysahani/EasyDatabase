@@ -27,7 +27,6 @@ public class BookContentProvider extends EasyDatabaseContentProvider {
 		// This variable get use in query fire from any where in app because
 		// of that it is static
 		BOOK_TABLE_URI = getContentURI();
-
 	}
 
 	@Override
@@ -44,13 +43,6 @@ public class BookContentProvider extends EasyDatabaseContentProvider {
 		tableParamMap.put(KEY_AUTHOR_NAME, "varchar(50)");
 		tableParamMap.put(KEY_PRICE, "int");
 
-	}
-
-	@Override
-	protected void fillProjectionMap(HashMap<String, String> projectionMap) {
-		projectionMap.put(KEY_BOOK_NAME, KEY_BOOK_NAME);
-		projectionMap.put(KEY_AUTHOR_NAME, KEY_AUTHOR_NAME);
-		projectionMap.put(KEY_PRICE, KEY_PRICE);
 	}
 
 	@Override

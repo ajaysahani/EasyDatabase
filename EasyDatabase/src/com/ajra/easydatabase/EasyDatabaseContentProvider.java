@@ -54,16 +54,22 @@ public abstract class EasyDatabaseContentProvider extends ContentProvider {
 		mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		mUriMatcher
 				.addURI(getAuthority(), getTableName(), getTableIdentifier());
-		projectionMap = new LinkedHashMap<String, String>();
-		projectionMap.put(KEY_ID, KEY_ID);
+		
 		tableParamMap = new LinkedHashMap<String, String>();
 		tableParamMap.put(KEY_ID, "integer primary key autoincrement");
-		fillProjectionMap(projectionMap);
 		fillTableParamMap(tableParamMap);
+		fillProjectionMap();
 		initialize();
 		mSqlHelper=getSqlHelper();
 	}
 
+	private void fillProjectionMap(){
+		projectionMap = new LinkedHashMap<String, String>();
+		for (Map.Entry<String, String> entry : tableParamMap.entrySet()) {
+		    String key = entry.getKey();
+			projectionMap.put(key, key);
+		}
+	}
 	@Override
 	public int delete(Uri uri, String where, String[] whereArgs) {
 		int count = 0;
@@ -391,13 +397,6 @@ public abstract class EasyDatabaseContentProvider extends ContentProvider {
 	protected abstract void fillTableParamMap(
 			HashMap<String, String> tableParamMap);
 
-	/**
-	 * Initialize projection map for particular table.
-	 * 
-	 * @param projectionMap
-	 */
-	protected abstract void fillProjectionMap(
-			HashMap<String, String> projectionMap);
 
 	protected boolean isDebaugModeOn() {
 		return isDebaugModeOn;

@@ -64,13 +64,6 @@ public class BookContentProvider extends EasyDatabaseContentProvider {
 	}
 
 	@Override
-	protected void fillProjectionMap(HashMap<String, String> projectionMap) {
-		projectionMap.put(KEY_BOOK_NAME, KEY_BOOK_NAME);
-		projectionMap.put(KEY_AUTHOR_NAME, KEY_AUTHOR_NAME);
-		projectionMap.put(KEY_PRICE, KEY_PRICE);
-	}
-
-	@Override
 	protected String getTableName() {
 		return BOOK_TABLE_NAME;
 	}
