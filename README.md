@@ -24,6 +24,7 @@ How to use library
 2:Override all method which is needed as per your requirement.
 example:
 
+```java
 public class BookContentProvider extends EasyDatabaseContentProvider {
 
 	public static String BOOK_TABLE_CREATION_STRING;
@@ -86,10 +87,12 @@ public class BookContentProvider extends EasyDatabaseContentProvider {
 	}
 
 }
-
+```
 3:Create Sql Helper class and that should be singleton to improve performance and to avoid multiple data instance creation.
 example:
-public class DemoSqlHelper extends SQLiteOpenHelper {
+
+```java
+ public class DemoSqlHelper extends SQLiteOpenHelper {
 
 	public static final int DATABASE_VERSION = 1;
 	public static final String DATABASE_NAME = "DemoDatabase";
@@ -121,9 +124,10 @@ public class DemoSqlHelper extends SQLiteOpenHelper {
 	}
 
 }
-
+```
 4:define Content provider inside AndroidMainfest file.
 example:
+
 <provider
             android:name="com.ajra.demo.database.BookContentProvider"
             android:authorities="@string/book_authority_name"
@@ -132,13 +136,15 @@ example:
 If we would like to share data of table  android:exported="true"
 
 5:We are done with table creation.
+
 6:Now use it.
 example:
+```java
 ContentValues values = new ContentValues();
 values.put(BookContentProvider.KEY_BOOK_NAME, bookName);
 Uri uri=getContentResolver().insert(BookContentProvider.BOOK_TABLE_URI,
 					values);
-
+```
 
 
 Progaurd
