@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasyDatabaseDemo</string>
+    <!-- Authority name for DemoContentProvider -->
+    <string name="book_authority_name">com.ajra.demo.database.BookContentProvider</string>
+
+</resources>
