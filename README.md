@@ -120,12 +120,12 @@ example:
 ```
 4:define Content provider inside AndroidMainfest file.
 example:
-
+```java
 <provider
-            android:name="com.ajra.demo.database.BookContentProvider"
+           android:name="com.ajra.demo.database.BookContentProvider"
             android:authorities="@string/book_authority_name"
             android:exported="false" />
-
+```
 If we would like to share data of table  android:exported="true"
 
 5:We are done with table creation.
