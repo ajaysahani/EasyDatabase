@@ -1,5 +1,7 @@
 EasyDatabase
 ====================
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyDatabase-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1098)
+
 This library design to create database using ContentProvider and keeping in mind reduce complexity in database table creation and easy to maintain code. 
 
 Features
